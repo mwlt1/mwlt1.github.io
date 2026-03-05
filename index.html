@@ -492,7 +492,7 @@
      <script>
         document.querySelectorAll('input[type="radio"]').forEach(cb => {
         cb.addEventListener('change', () => {
-            if (cb.checked) cb.disabled = false;   // verrouille la case cochée
+            if (cb.checked) cb.enabled = true;   // verrouille la case cochée
           });
         });
     </script>
