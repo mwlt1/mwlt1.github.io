@@ -68,29 +68,43 @@ myDate.innerHTML = yes;
 
 //Cases à cocher
 // Sélectionne toutes les cases radio 
-const skillInputs = document.querySelectorAll(
+const casecocher = document.querySelectorAll(
     '#competences input[type="radio"]'
 );
 
-// Fonction : restaure l’état coché depuis le localStorage
-skillInputs.forEach(input => {
-    const key = 'skill_' + input.name; // clé unique par case
-    const savedState = localStorage.getItem(key);
+// version du stockage (à changer si tu modifies tes cases)
+const storageVersion = "v1";
 
-    if (savedState === 'checked') {
+// vérifie la version
+if (localStorage.getItem("skill_version") !== storageVersion) {
+    Object.keys(localStorage).forEach(key => {
+        if (key.startsWith("skill_")) {
+            localStorage.removeItem(key);
+        }
+    });
+
+    localStorage.setItem("skill_version", storageVersion);
+}
+
+// restaure l'état
+casecocher.forEach(input => {
+    const cle = 'skill_' + input.name;
+    const etatSave = localStorage.getItem(cle);
+
+    if (etatSave === 'checked') {
         input.checked = true;
     }
 });
 
-// Fonction : sauvegarde l’état lorsqu’on coche une case
-skillInputs.forEach(input => {
-    const key = 'skill_' + input.name;
+// sauvegarde l'état
+casecocher.forEach(input => {
+    const cle = 'skill_' + input.name;
 
     input.addEventListener('change', () => {
         if (input.checked) {
-            localStorage.setItem(key, 'checked');
+            localStorage.setItem(cle, 'checked');
         } else {
-            localStorage.removeItem(key);
+            localStorage.removeItem(cle);
         }
     });
 });
