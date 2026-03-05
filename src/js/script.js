@@ -73,7 +73,7 @@ const casecocher = document.querySelectorAll(
 );
 
 // version du stockage (à changer si tu modifies tes cases)
-const storageVersion = "v1";
+const storageVersion = "v2";
 
 // vérifie la version
 if (localStorage.getItem("skill_version") !== storageVersion) {
