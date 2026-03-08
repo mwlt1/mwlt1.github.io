@@ -91,11 +91,21 @@ if (
   let currentIndex = 0;
 
   function updateModal() {
-    if (currentImages.length === 0) return;
+  if (currentImages.length === 0) return;
 
-    modalImage.src = currentImages[currentIndex].trim();
-    modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
-  }
+  const imagePath = currentImages[currentIndex].trim();
+  console.log("Chemin image utilisé :", imagePath);
+
+  modalImage.src = imagePath;
+  modalImage.onerror = () => {
+    console.log("Erreur de chargement image :", imagePath);
+  };
+  modalImage.onload = () => {
+    console.log("Image chargée OK :", imagePath);
+  };
+
+  modalCounter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+}
 
   function closeProjectModal() {
     modal.classList.remove("active");
