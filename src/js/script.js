@@ -194,6 +194,13 @@ casecocher.forEach((input) => {
   }
 });
 
+// verrouille les cases non cochées
+casecocher.forEach(input => {
+    if (!input.checked) {
+        input.disabled = true;
+    }
+});
+
 // sauvegarde des cases cochées
 casecocher.forEach((input) => {
   const cle = "skill_" + input.name;
