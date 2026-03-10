@@ -214,6 +214,35 @@ casecocher.forEach((input) => {
   });
 });
 
+// =============================
+// LISTE DÉROULANTE TABLEAU
+// =============================
+const categories = document.querySelectorAll("#competences .cat");
+
+categories.forEach(cat => {
+
+  let nextRow = cat.nextElementSibling;
+
+  // cache toutes les lignes sous la catégorie
+  while (nextRow && !nextRow.classList.contains("cat")) {
+    nextRow.classList.add("hidden-row");
+    nextRow = nextRow.nextElementSibling;
+  }
+
+  // clic sur la catégorie
+  cat.addEventListener("click", () => {
+
+    let row = cat.nextElementSibling;
+
+    while (row && !row.classList.contains("cat")) {
+      row.classList.toggle("hidden-row");
+      row = row.nextElementSibling;
+    }
+
+  });
+
+});
+
 /*const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 

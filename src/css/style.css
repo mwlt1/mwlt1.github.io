@@ -25,6 +25,13 @@
   --width-large: 1300px;
 }
 
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
 [data-theme="dark"] {
   --primary-color: #d183a9;
   --secondary-color: #d183a9;
@@ -331,6 +338,17 @@ tbody tr:hover {
   font-weight: 700;
 }
 
+.cat {
+  cursor: pointer;
+}
+
+.cat:hover {
+  background: #e2a9cd;
+}
+
+.hidden-row {
+  display: none;
+}
 
 /* Style cases à cocher */
 input[type="radio"] {
