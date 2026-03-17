@@ -457,6 +457,60 @@ input[type="radio"] {
   }
 }
 
+.veille-outils h3 {
+  text-align: center;
+  color: #a85c85;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.veille-outils {
+  background: #f8d6e6;
+  border: 2px solid #d183a9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease-in-out;
+}
+
+.veille-outils ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.veille-outils li {
+  margin-bottom: 8px;
+}
+
+/* effet léger au survol (optionnel mais propre) */
+.veille-outils:hover {
+  transform: translateY(-3px);
+}
+
+/* titre */
+.veille-outils h3 {
+  color: #a85c85; /* rose un peu plus foncé */
+  margin-bottom: 10px;
+}
+
+/* texte */
+.veille-outils p {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* liste */
+.veille-outils ul {
+  padding-left: 20px;
+}
+
+.veille-outils li {
+  margin-bottom: 8px;
+  color: #333;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   th,
