@@ -511,6 +511,17 @@ input[type="radio"] {
   color: #333;
 }
 
+[data-theme="dark"] .veille-card {
+  background: #ffffff;
+  color: #222;
+}
+
+[data-theme="dark"] .veille-card h4,
+[data-theme="dark"] .veille-card p,
+[data-theme="dark"] .veille-card .veille-meta {
+  color: #222;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   th,
