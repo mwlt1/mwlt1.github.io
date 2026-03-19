@@ -243,6 +243,26 @@ categories.forEach(cat => {
 
 });
 
+// flip card
+const skillButtons = document.querySelectorAll(".skills-btn");
+const backButtons = document.querySelectorAll(".back-btn");
+
+skillButtons.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // empêche le clic projet
+    const card = btn.closest(".card");
+    card.classList.add("flip");
+  });
+});
+
+backButtons.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const card = btn.closest(".card");
+    card.classList.remove("flip");
+  });
+});
+
 /*const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
